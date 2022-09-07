@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -50,16 +52,24 @@ public class Restaurant {
 
         menu.remove(itemToBeRemoved);
     }
-    public void displayDetails(){
-        System.out.println("Restaurant:"+ name + "\n"
+    public String getName() {
+        return name;
+    }
+    public String displayDetails(){
+        return ("Restaurant:"+ name + "\n"
                 +"Location:"+ location + "\n"
                 +"Opening time:"+ openingTime +"\n"
                 +"Closing time:"+ closingTime +"\n"
                 +"Menu:"+"\n"+getMenu());
-
     }
-
-    public String getName() {
-        return name;
+    public int getOrderCost(String @NotNull ...items) {
+        int orderCost = 0;
+        for(String name : items) {
+            Item item = findItemByName(name);
+            if(item != null) {
+                orderCost += item.getPrice();
+            }
+        }
+        return orderCost;
     }
 }
