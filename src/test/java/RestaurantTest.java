@@ -59,4 +59,17 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void get_order_cost_string_return_zero_cost_for_no_item_selected() throws itemNotFoundException{
+
+    }
+
+    @Test
+    public void get_order_cost_string_return_total_cost_of_selected_item() throws itemNotFoundException {
+        //"Sweet corn soup",119;
+        //"Vegetable lasagne", 269;
+        //119 + 269 = 388
+    }
+
+
 }
